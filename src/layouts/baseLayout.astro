@@ -1,18 +1,67 @@
 ---
-import Header from '@components/Header.astro';
+import Header from "@components/Header.astro";
+
+const { title } = Astro.props;
 ---
+
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Andrei Pop</title>
   </head>
-  <body>
-    <Header />
-    <div id="content">
-        <slot /> 
+  <body class="flex flex-col">
+    <div class="main">
+      <Header />
+      <h1>{title}</h1>
+      <div id="content">
+        <slot />
+      </div>
     </div>
   </body>
 </html>
+
+<style>
+  html {
+    line-height: 1.5;
+    min-width: 360px;
+  }
+  body {
+    margin: 2rem 1rem 10rem;
+    max-width: 42rem;
+
+    .main {
+      margin-top: 1.5rem;
+      padding-inline: 0.5rem;
+    }
+  }
+
+  .flex {
+    display: flex;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    body {
+      .main {
+        padding-inline: 0;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    body {
+      margin-inline: auto;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html {
+      color-scheme: dark;
+    }
+  }
+</style>
