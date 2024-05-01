@@ -1,5 +1,5 @@
-name: Touching the water with GH Actions
-run-name: ${{ github.actor }} is rocking GitHub Actions 🚀
+name: Astro portofolio web page
+run-name: ${{ github.actor }} triggered the CI/CD pipeline. 🚀
 on: [push]
 
 jobs:
@@ -13,6 +13,9 @@ jobs:
         with:
           node-version: "20.x"
           cache: "npm"
+      - name: Install dependencies
+        run: |
+          npm ci --no-audit --no-fund --prefer-offline
       - name: Check formatting
         run: |
           npm run format:check
