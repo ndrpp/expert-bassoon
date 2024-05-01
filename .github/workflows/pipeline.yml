@@ -1,0 +1,32 @@
+name: Touching the water with GH Actions
+run-name: ${{ github.actor }} is rocking GitHub Actions 🚀
+on: [push]
+
+jobs:
+  format-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Use Nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - name: Check formatting
+        run: |
+          npm run format:check
+      - run: echo "status is ${{ job.status }}."
+
+  astro-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Use Nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - name: Astro check
+        run: |
+          astro check
+      - run: echo "status is ${{ job.status }}."
