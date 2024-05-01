@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '@layouts/baseLayout.astro'
+
+const blogEntries = await getCollection('blog')
+---
+<BaseLayout title="Blog">
+    <ul>
+       {blogEntries.map(blogPostEntry => (
+        <li>
+        <a href={`/blog/${blogPostEntry.slug}`}>{blogPostEntry.data.title}</a>
+        <time datetime={blogPostEntry.data.publishedDate.toISOString()}>
+        {blogPostEntry.data.publishedDate.toDateString()}
+        </time>
+        </li>
+       ))}
+    </ul>
+</BaseLayout>

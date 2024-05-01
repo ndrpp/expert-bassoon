@@ -6,12 +6,17 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
+    "format": "npx prettier --write .",
+    "format:check": "npx prettier --check .",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.7.0",
+    "astro": "^4.7.0"
+  },
+  "devDependencies": {
     "@astrojs/check": "^0.5.10",
+    "prettier": "^3.2.5",
     "typescript": "^5.4.5"
   }
 }
