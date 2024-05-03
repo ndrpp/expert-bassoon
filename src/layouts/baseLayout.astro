@@ -15,15 +15,24 @@ const { title } = Astro.props;
   <body class="flex flex-col">
     <div class="main">
       <Header />
-      <h1>{title}</h1>
-      <div id="content">
+      <h1 class="text-black">{title}</h1>
+      <section id="content">
         <slot />
-      </div>
+      </section>
     </div>
   </body>
 </html>
 
 <style>
+  :root {
+    --nav-hover-color: rgb(229 229 229);
+    --headers-text-color: rgb(0 0 0/1);
+    --prose-heading-color: #171717;
+    --prose-body-color: #404040;
+    --prose-links-color: #171717;
+    --prose-links-underline-color: #a3a3a3;
+  }
+
   html {
     line-height: 1.5;
     min-width: 360px;
@@ -38,11 +47,24 @@ const { title } = Astro.props;
     }
   }
 
+  .text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .text-neutral-600 {
+    color: rgb(82 82 82/1);
+  }
+
   .flex {
     display: flex;
   }
   .flex-col {
     flex-direction: column;
+  }
+
+  .text-black: {
+    color: var(--headers-text-color);
   }
 
   @media (min-width: 768px) {
@@ -60,6 +82,15 @@ const { title } = Astro.props;
   }
 
   @media (prefers-color-scheme: dark) {
+    :root {
+      --nav-hover-color: rgb(229 229 229);
+      --headers-text-color: rgb(255 255 255/1);
+      --prose-heading-color: #fff;
+      --prose-body-color: #d4d4d4;
+      --prose-links-color: #fff;
+      --prose-links-underline-color: #525252;
+    }
+
     html {
       color-scheme: dark;
     }

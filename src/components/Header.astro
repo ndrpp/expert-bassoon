@@ -13,5 +13,22 @@
     letter-spacing: -0.025em;
 
     margin-bottom: 4rem;
+    padding-bottom: 0;
+    padding-inline: 0;
+
+    a {
+      padding-inline: 0.5rem;
+      padding-block: 0.25rem;
+
+      text-decoration: none;
+      color: inherit;
+
+      &:first-child {
+        padding-left: 0;
+      }
+      &:hover {
+        color: var(--nav-hover-color);
+      }
+    }
   }
 </style>
