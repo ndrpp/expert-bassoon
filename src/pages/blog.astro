@@ -10,12 +10,38 @@ const blogEntries = await getCollection("blog");
     {
       blogEntries.map((blogPostEntry) => (
         <li>
-          <a href={`/blog/${blogPostEntry.slug}`}>{blogPostEntry.data.title}</a>
           <time datetime={blogPostEntry.data.publishedDate.toISOString()}>
-            {blogPostEntry.data.publishedDate.toDateString()}
+            {blogPostEntry.data.publishedDate.toLocaleDateString("default", {
+              day: "2-digit",
+              month: "short",
+              year: "numeric",
+            })}
           </time>
+          <a href={`/blog/${blogPostEntry.slug}`}>{blogPostEntry.data.title}</a>
         </li>
       ))
     }
   </ul>
 </BaseLayout>
+
+<style>
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    a {
+      padding-inline: 0.5rem;
+      padding-block: 0.25rem;
+
+      text-decoration: none;
+      color: inherit;
+
+      &:first-child {
+        padding-left: 0;
+      }
+      &:hover {
+        color: var(--nav-hover-color);
+      }
+    }
+  }
+</style>
