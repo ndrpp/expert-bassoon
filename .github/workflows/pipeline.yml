@@ -1,5 +1,5 @@
 name: Astro portofolio web page
-run-name: ${{ github.actor }} triggered the CI/CD pipeline. 🚀
+run-name: ${{ github.actor }} triggered GH Actions.
 on: [push]
 
 jobs:
