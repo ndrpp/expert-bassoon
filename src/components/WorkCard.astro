@@ -1,0 +1,40 @@
+---
+const { company, position, yearRange } = Astro.props;
+---
+
+<hr class="delimiter" />
+<h2 class="text-xl company-name">{company}</h2>
+<p class="text-sm company-position">
+  {position}{yearRange ? `, ${yearRange}` : ""}
+</p>
+<slot />
+
+<style>
+  h2 {
+    color: var(--prose-heading-color);
+  }
+
+  .company-name {
+    margin: 0 0 0.25rem 0;
+  }
+  .company-position {
+    color: var(--company-position-color);
+  }
+
+  .delimiter {
+    margin-block: 1.5rem;
+
+    border-color: var(--work-limiter-color);
+    border: 0 solid var(--work-limiter-color);
+    border-top-width: 1px;
+  }
+
+  .text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  .text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+</style>

@@ -1,5 +1,33 @@
 ---
 import BaseLayout from "@layouts/baseLayout.astro";
+import WorkCard from "@components/WorkCard.astro";
 ---
 
-<BaseLayout title="work" />
+<BaseLayout title="work">
+  <p>Here's a summary of my work so far.</p>
+  <WorkCard
+    company="Hypermedia"
+    position="Software Engineer"
+    yearRange="2022 - present"
+  >
+    <p>
+      Since joining HPM, I've been involved in a variety of projects, spanning
+      from video education platforms to one-to-one medical video meetings and
+      highly scalable, microservice-based e-mobility solutions.
+    </p>
+    <p>
+      On the frontend, I've utilized React and Angular, contributing to
+      migrations from JavaScript to TypeScript and participating in application
+      merges. In backend development, I've worked extensively with Node.js,
+      handling both monolithic applications using Express.js and AWS-based
+      Lambda functions.
+    </p>
+    <p>
+      In the realm of DevOps/Infrastructure, I've played a pivotal role in areas
+      such as Grafana monitoring and alerting, CI/CD pipelines (successfully
+      reducing build times by 50-75% for multiple squads), and deployments
+      utilizing Ansible for on-premises environments and
+      Terraform/CloudFormation for cloud deployments (AWS).
+    </p>
+  </WorkCard>
+</BaseLayout>
