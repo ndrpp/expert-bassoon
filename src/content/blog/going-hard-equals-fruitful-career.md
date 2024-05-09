@@ -1,6 +1,6 @@
 ---
 title: Going hard equals fruitful career or Why Marcus Aurelius would've made a great coder
-publishedDate: 09-05-2024
+publishedDate: 05-09-2024
 ---
 
 Doing hard things is what drives the human brain. Challenge. This is also what
