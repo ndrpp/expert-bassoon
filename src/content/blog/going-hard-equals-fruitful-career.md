@@ -1,6 +1,7 @@
 ---
 title: Going hard equals fruitful career or Why Marcus Aurelius would've made a great coder
 publishedDate: 05-09-2024
+firstParagraph: Doing hard things is what drives the human brain. Challenge. This is also what keeps us in the so called flow state. The state in which you're being your best self. In which you produce as much as possibly can, both in terms of quality and in terms of quantity.
 ---
 
 Doing hard things is what drives the human brain. Challenge. This is also what

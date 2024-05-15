@@ -10,14 +10,19 @@ const blogEntries = await getCollection("blog");
     {
       blogEntries.map((blogPostEntry) => (
         <li>
-          <time datetime={blogPostEntry.data.publishedDate.toISOString()}>
+          <h2 class="text-xl">{blogPostEntry.data.title}</h2>
+          <time
+            class="text-sm post-date"
+            datetime={blogPostEntry.data.publishedDate.toISOString()}
+          >
             {blogPostEntry.data.publishedDate.toLocaleDateString("default", {
               day: "2-digit",
               month: "short",
               year: "numeric",
             })}
           </time>
-          <a href={`/blog/${blogPostEntry.slug}`}>{blogPostEntry.data.title}</a>
+          <p>{blogPostEntry.data.firstParagraph}</p>
+          <a href={`/blog/${blogPostEntry.slug}`}>Read more..</a>
         </li>
       ))
     }
@@ -30,7 +35,6 @@ const blogEntries = await getCollection("blog");
     padding: 0;
 
     a {
-      padding-inline: 0.5rem;
       padding-block: 0.25rem;
 
       text-decoration: underline;
@@ -43,5 +47,25 @@ const blogEntries = await getCollection("blog");
         color: var(--nav-hover-color);
       }
     }
+  }
+
+  h2 {
+    color: var(--prose-heading-color);
+  }
+
+  .post-title {
+    margin: 0 0 0.25rem 0;
+  }
+  .post-date {
+    color: var(--company-position-color);
+  }
+
+  .text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  .text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 </style>
